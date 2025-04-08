@@ -1,0 +1,13 @@
+# PyTorch model checkpoints
+*.pth
+
+# Numpy binary files
+*.npz
+*.npy
+
+# Matplotlib plot images
+*.png
+*.svg
+
+# Logs
+*.log
