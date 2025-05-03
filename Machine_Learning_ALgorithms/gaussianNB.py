@@ -3,6 +3,9 @@ from sklearn.naive_bayes import GaussianNB
 from perform import perform 
 import os
 
+sum_accuracy = 0
+sum_sensitivity = 0
+sum_specificity = 0
 dataset_fold = "splits"
 files = os.listdir(dataset_fold)
 for data in files:
@@ -25,4 +28,9 @@ for data in files:
     y_pred_train = NB_model.predict(x_train)
 
     # Evaluate the model
-    perform(NB_model, x_test, y_test, y_pred, y_train, x_train)
+    accuracy, sensitivity, specificity = perform(NB_model, x_test, y_test, y_pred, y_train, x_train)
+    sum_accuracy += accuracy
+    sum_sensitivity += sensitivity
+    sum_specificity += specificity
+
+print("sum_accuracy, sum_sensitivity, sum_specificity:", sum_accuracy/5, sum_sensitivity/5, sum_specificity/5)

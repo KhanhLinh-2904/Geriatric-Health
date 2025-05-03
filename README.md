@@ -40,3 +40,8 @@ python test.py
 ```bash
 python Machine_Learning_ALgorithms/decision_tree.py
 ```
+### Slide for Presentation
+
+```bash
+Midterm Health_ Linh.pdf
+```

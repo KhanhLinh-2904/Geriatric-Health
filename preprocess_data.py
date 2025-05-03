@@ -182,7 +182,7 @@ if __name__ == "__main__":
     file_path = "pone.0166148.s001.xlsx"
     df = load_dataset(file_path)
     feature_info = feature_statistic(df)
-    # plot_feature_summary(feature_info)
+    plot_feature_summary(feature_info)
     Dataset = fill_missing_values(df, feature_info)
     data_split_cross_validation(Dataset)
 

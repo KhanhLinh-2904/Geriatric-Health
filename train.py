@@ -41,7 +41,7 @@ for data in files:
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
     # Training Loop
-    num_epochs = 1000
+    num_epochs = 100
     train_losses = []
     val_losses = []
     best_loss = float('inf')

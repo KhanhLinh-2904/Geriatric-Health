@@ -5,6 +5,9 @@ import os
 
 dataset_fold = "splits"
 files = os.listdir(dataset_fold)
+sum_accuracy = 0
+sum_sensitivity = 0
+sum_specificity = 0
 for data in files:
     data_path = os.path.join(dataset_fold, data)
     best_model = os.path.join("best_model", data + "_best_model.pth")
@@ -26,4 +29,9 @@ for data in files:
     y_pred_train = DT_model.predict(x_train)
 
     # Evaluate the model
-    perform(DT_model, x_test, y_test, y_pred, y_train, x_train)
+    accuracy, sensitivity, specificity = perform(DT_model, x_test, y_test, y_pred, y_train, x_train)
+    sum_accuracy += accuracy
+    sum_sensitivity += sensitivity
+    sum_specificity += specificity
+
+print("sum_accuracy, sum_sensitivity, sum_specificity:", sum_accuracy/5, sum_sensitivity/5, sum_specificity/5)
